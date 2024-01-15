@@ -3,7 +3,7 @@ A jenkins images that can use docker. This creates a docker image with Jenkins a
 
 Notes
  - The CLI version installed should match the host engine's version number. To list the available version:
-   - Run: `build.sh && run.sh`
+   - Run: `./build.sh && ./run.sh`
    - Run: `docker exec Jenkins apt-cache madison docker-ce-cli`
    - Edit the Dockerfile and update the DOCKER_VERSION variable with the correct version 
 
