@@ -8,6 +8,7 @@ Notes
    - List the available version from the container: `docker exec Jenkins apt-cache madison docker-ce-cli`
    - Edit the Dockerfile and update the DOCKER_VERSION variable with the correct version from the container
    - Rebuild
+ - I've noticed strange behavor referencing the Docker-Desktop instance of dockerd
 
 Known Issues:
  - The container is using the root user. I haven’t figured out how to use the host’s dockerd socket with the `jenkins` user.
