@@ -1,5 +1,9 @@
 # jenkins-image
-A jenkins images that can use docker. This creates a docker image with Jenkins and the Docker CLI.
+
+Installs:
+ * Docker Cli
+ * Node Version Manager
+
 
 Notes
  - The CLI version installed should match the host engine's version number. To list the available version:

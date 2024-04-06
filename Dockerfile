@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.440
+FROM jenkins/jenkins:2.440.2-lts
 
 USER root
 
@@ -19,4 +19,7 @@ RUN echo \
 ARG DOCKER_VERSION=5:24.0.7-1~debian.12~bookworm
 RUN apt-get update
 RUN apt-get -y install docker-ce-cli=$DOCKER_VERSION
+
+# Install nvm
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
