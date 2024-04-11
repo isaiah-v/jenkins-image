@@ -1,18 +1,16 @@
 # jenkins-image
 
-Installs:
- * Docker Cli
+### What does this image add?
+ - Healthcheck
+ - Everything needed to install the docker-cli
 
 
-Notes
- - The CLI version installed should match the host engine's version number. To list the available version:
-   - Note the host machine's version number: `docker --verson`
-   - Build and run the jenkins image: `./build.sh && ./run.sh`
-   - List the available version from the container: `docker exec Jenkins apt-cache madison docker-ce-cli`
-   - Edit the Dockerfile and update the DOCKER_VERSION variable with the correct version from the container
-   - Rebuild
- - I've noticed strange behavor referencing the Docker-Desktop instance of dockerd
+### Notes
 
-Known Issues:
+This image is configured to install the docker-cli; however, it doesn't actually perform the installation. The version of docker-cli you aim to install
+should match the version of Docker present on the host machine. Therefore, the docker-cli ought to be installed after deployment. For guidance, refer
+to the run.sh script.
+
+### Known Issues:
  - The container is using the root user. I haven’t figured out how to use the host’s dockerd socket with the `jenkins` user.
 
