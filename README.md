@@ -2,7 +2,6 @@
 
 Installs:
  * Docker Cli
- * Node Version Manager
 
 
 Notes

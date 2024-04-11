@@ -15,11 +15,9 @@ RUN echo \
   $(. /etc/os-release && echo bookworm) stable" | \
   tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-# Install docker-cli
-ARG DOCKER_VERSION=5:24.0.7-1~debian.12~bookworm
 RUN apt-get update
-RUN apt-get -y install docker-ce-cli=$DOCKER_VERSION
 
-# Install nvm
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# Setup the health-check
+HEALTHCHECK --retries=10 --timeout=20s \
+  CMD curl --head -fsS http://localhost:8080/login
 
